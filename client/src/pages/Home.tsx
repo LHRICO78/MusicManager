@@ -43,12 +43,14 @@ export default function Home() {
 
       // Lister les fichiers musicaux
       const musicFiles: MusicFile[] = [];
-      const audioExtensions = [".mp3", ".wav", ".flac", ".aac", ".ogg", ".m4a", ".wma"];
+      const audioExtensions = [".mp3", ".wav", ".flac", ".aac", ".ogg", ".m4a", ".wma", ".alac", ".ape", ".opus", ".wv", ".dsf", ".dff", ".dsd", ".m4b", ".aiff", ".au", ".mid", ".midi"];
 
       for await (const entry of (dirHandle as any).entries()) {
         const [name, handle] = entry;
         if (handle.kind === "file") {
-          const ext = name.substring(name.lastIndexOf(".")).toLowerCase();
+          const lastDotIndex = name.lastIndexOf(".");
+          if (lastDotIndex === -1) continue;
+          const ext = name.substring(lastDotIndex).toLowerCase();
           if (audioExtensions.includes(ext)) {
             const file = await handle.getFile();
             musicFiles.push({
