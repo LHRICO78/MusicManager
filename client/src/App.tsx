@@ -18,17 +18,17 @@ function Router() {
   );
 }
 
-// NOTE: About Theme
-// - First choose a default theme according to your design style (dark or light bg), than change color palette in index.css
-//   to keep consistent foreground/background color across components
-// - If you want to make theme switchable, pass `switchable` ThemeProvider and use `useTheme` hook
-
+/**
+ * Design: Minimalisme Moderne & Efficacité
+ * - Thème: Dark (fond noir, texte blanc, accent vert électrique)
+ * - Palette: #0a0a0a (fond), #f5f5f5 (texte), #00ff00 (accent)
+ * - Typographie: JetBrains Mono pour l'atmosphère de terminal
+ */
 function App() {
   return (
     <ErrorBoundary>
       <ThemeProvider
-        defaultTheme="light"
-        // switchable
+        defaultTheme="dark"
       >
         <TooltipProvider>
           <Toaster />
