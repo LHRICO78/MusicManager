@@ -31,7 +31,31 @@ Music Manager supporte une large gamme de formats audio grâce aux capacités na
 Pour faire fonctionner Music Manager, assurez-vous d'avoir installé :
 
 - **Node.js** 18 ou supérieur (disponible sur [nodejs.org](https://nodejs.org/))
-- Un gestionnaire de paquets : **pnpm** (recommandé), **npm** ou **yarn**.
+- Un gestionnaire de paquets : **pnpm** (recommandé), **npm** ou **yarn**. Voici comment les installer si vous ne les avez pas déjà :
+
+    #### Installer pnpm
+
+    ```bash
+    # Sur macOS/Linux
+    curl -fsSL https://get.pnpm.io/install.sh | sh -
+
+    # Sur Windows (PowerShell)
+    iwr https://get.pnpm.io/install.ps1 -useb | iex
+    ```
+
+    #### Installer npm (généralement inclus avec Node.js)
+
+    ```bash
+    # Mettre à jour npm à la dernière version
+    npm install -g npm@latest
+    ```
+
+    #### Installer Yarn
+
+    ```bash
+    # Via npm
+    npm install -g yarn
+    ```
 - Un **navigateur compatible** : Chrome, Edge, ou Brave (l'API File System Access est essentielle et n'est pas entièrement supportée par Firefox ou Safari).
 
 ### Installation et Lancement
