@@ -1,52 +1,61 @@
 # 📖 Guide d'Installation Détaillé - Music Manager
 
-Ce guide vous aidera à installer et configurer Music Manager sur votre ordinateur.
+Ce guide vous fournira des instructions complètes pour installer et configurer **Music Manager** sur votre système. Il couvre les prérequis, les étapes d'installation pour différents gestionnaires de paquets, et des conseils de dépannage.
 
-## 🖥️ Système d'exploitation supporté
+## 🖥️ Systèmes d'exploitation supportés
 
-- Windows 10/11
-- macOS 10.15+
-- Linux (Ubuntu, Debian, Fedora, etc.)
+Music Manager est compatible avec les systèmes d'exploitation suivants :
+
+-   **Windows** 10/11
+-   **macOS** 10.15+ (Catalina et versions ultérieures)
+-   **Linux** (distributions basées sur Debian comme Ubuntu, Fedora, Arch Linux, etc.)
 
 ## 📋 Prérequis
 
-Avant de commencer, assurez-vous d'avoir installé :
+Avant de procéder à l'installation de Music Manager, assurez-vous que les logiciels suivants sont installés sur votre machine :
 
-### 1. Node.js
+### 1. Node.js (Version 18 ou supérieure)
 
-**Windows/macOS/Linux :**
+Node.js est un environnement d'exécution JavaScript côté serveur nécessaire pour faire fonctionner l'application. Il inclut `npm` (Node Package Manager) par défaut.
 
-1. Allez sur [nodejs.org](https://nodejs.org/)
-2. Téléchargez la version LTS (Long Term Support)
-3. Installez en suivant les instructions
-4. Vérifiez l'installation en ouvrant un terminal/CMD et tapez :
+**Instructions d'installation :**
+
+1.  Rendez-vous sur le site officiel de Node.js : [nodejs.org](https://nodejs.org/)
+2.  Téléchargez la version **LTS (Long Term Support)** recommandée pour la plupart des utilisateurs.
+3.  Suivez les instructions d'installation spécifiques à votre système d'exploitation.
+
+**Vérification de l'installation :**
+
+Ouvrez un terminal (ou l'invite de commande/PowerShell sur Windows) et exécutez les commandes suivantes :
 
 ```bash
 node --version
 npm --version
 ```
 
-Vous devriez voir les numéros de version.
+Vous devriez voir les numéros de version de Node.js et npm affichés.
 
 ### 2. Gestionnaires de paquets (pnpm, npm, yarn)
 
-Vous pouvez utiliser pnpm (recommandé), npm ou yarn pour installer les dépendances du projet.
+Music Manager utilise un gestionnaire de paquets pour gérer ses dépendances. Vous pouvez choisir entre `pnpm` (recommandé), `npm` ou `yarn`.
 
-#### pnpm (recommandé)
+#### pnpm (Recommandé)
+
+pnpm est un gestionnaire de paquets rapide et efficace qui optimise l'espace disque.
 
 **Installation :**
 
-**Windows (PowerShell) :**
+-   **Windows (PowerShell) :**
 
-```powershell
+    ```powershell
 iwr https://get.pnpm.io/install.ps1 -useb | iex
-```
+    ```
 
-**macOS/Linux :**
+-   **macOS/Linux :**
 
-```bash
+    ```bash
 curl -fsSL https://get.pnpm.io/install.sh | sh -
-```
+    ```
 
 **Vérification :**
 
@@ -56,9 +65,9 @@ pnpm --version
 
 #### npm (Node Package Manager)
 
-npm est généralement installé avec Node.js. Si ce n'est pas le cas, ou si vous avez besoin de le mettre à jour :
+npm est le gestionnaire de paquets par défaut de Node.js. Il est généralement installé automatiquement avec Node.js.
 
-**Installation :**
+**Mise à jour (si nécessaire) :**
 
 ```bash
 npm install -g npm@latest
@@ -70,7 +79,9 @@ npm install -g npm@latest
 npm --version
 ```
 
-#### yarn
+#### Yarn
+
+Yarn est un autre gestionnaire de paquets populaire, développé par Facebook.
 
 **Installation :**
 
@@ -86,9 +97,14 @@ yarn --version
 
 ### 3. Git
 
-1. Allez sur [git-scm.com](https://git-scm.com/)
-2. Téléchargez et installez
-3. Vérifiez :
+Git est un système de contrôle de version distribué, nécessaire pour cloner le dépôt du projet.
+
+**Instructions d'installation :**
+
+1.  Rendez-vous sur le site officiel de Git : [git-scm.com](https://git-scm.com/)
+2.  Téléchargez et installez la version adaptée à votre système d'exploitation.
+
+**Vérification :**
 
 ```bash
 git --version
@@ -96,16 +112,21 @@ git --version
 
 ### 4. Navigateur compatible
 
-- ✅ **Chrome** (recommandé)
-- ✅ **Edge** (Microsoft)
-- ✅ **Brave**
-- ❌ **Firefox** (non supporté)
+Music Manager s'appuie sur l'API *File System Access*, qui n'est pas universellement supportée par tous les navigateurs. Pour une expérience optimale, utilisez :
+
+-   ✅ **Google Chrome** (recommandé)
+-   ✅ **Microsoft Edge**
+-   ✅ **Brave Browser**
+-   ❌ **Firefox** (non supporté pour l'API *File System Access*)
+-   ❌ **Safari** (non supporté pour l'API *File System Access*)
 
 ## 🚀 Installation étape par étape
 
+Suivez ces étapes pour obtenir une copie locale du projet et le faire fonctionner.
+
 ### Étape 1 : Cloner le dépôt
 
-Ouvrez un terminal/CMD et exécutez :
+Ouvrez votre terminal (ou l'invite de commande/PowerShell) et exécutez la commande suivante pour cloner le dépôt GitHub :
 
 ```bash
 git clone https://github.com/LHRICO78/MusicManager.git
@@ -114,175 +135,219 @@ cd MusicManager
 
 ### Étape 2 : Installer les dépendances
 
-Utilisez le gestionnaire de paquets de votre choix :
+Naviguez dans le répertoire du projet et installez les dépendances en utilisant le gestionnaire de paquets que vous avez choisi :
 
-**Avec pnpm (recommandé) :**
+#### Avec pnpm (Recommandé)
 
 ```bash
 pnpm install
 ```
 
-**Avec npm :**
+#### Avec npm
 
 ```bash
 npm install
 ```
 
-**Avec yarn :**
+#### Avec Yarn
 
 ```bash
 yarn install
 ```
 
-L'installation peut prendre quelques minutes. Attendez que le processus se termine.
+L'installation des dépendances peut prendre quelques minutes. Veuillez patienter jusqu'à ce que le processus soit terminé.
 
-### Étape 3 : Lancer l'application
+### Étape 3 : Lancer l'application en mode développement
+
+Une fois les dépendances installées, vous pouvez lancer l'application en mode développement :
+
+#### Avec pnpm
 
 ```bash
 pnpm dev
 ```
 
-Vous devriez voir :
+#### Avec npm
+
+```bash
+npm run dev
+```
+
+#### Avec Yarn
+
+```bash
+yarn dev
+```
+
+Vous devriez voir un message similaire à celui-ci dans votre terminal, indiquant que l'application est prête :
 
 ```
 ➜  Local:   http://localhost:3000/
-➜  Network: http://169.254.0.21:3000/
+➜  Network: http://169.254.0.21:3000/ # L'adresse IP peut varier
 ```
 
-### Étape 4 : Ouvrir dans le navigateur
+### Étape 4 : Ouvrir l'application dans le navigateur
 
-Ouvrez votre navigateur et allez à : **http://localhost:3000**
+Ouvrez votre navigateur web compatible (Chrome, Edge, Brave) et accédez à l'adresse : **http://localhost:3000**
 
 ## ✅ Première utilisation
 
-1. **Cliquez sur "Sélectionner Répertoire"**
-2. **Choisissez un dossier** contenant vos fichiers musicaux
-3. **Attendez** que les fichiers se chargent
-4. **Cliquez sur ▶️** pour lire un fichier
+Pour commencer à utiliser Music Manager :
+
+1.  **Cliquez sur le bouton "Sélectionner Répertoire"** dans l'interface de l'application.
+2.  **Choisissez un dossier** sur votre ordinateur contenant vos fichiers musicaux.
+3.  **Autorisez l'accès** au dossier lorsque votre navigateur vous le demande.
+4.  **Attendez** que l'application scanne et affiche tous les fichiers audio.
+5.  **Cliquez sur le bouton ▶️** à côté d'un fichier pour commencer la lecture.
 
 ## 🔧 Commandes utiles
 
-| Commande | Description | Gestionnaire de paquets |
-|----------|-------------|-------------------------|
-| `dev` | Lancer le serveur de développement | `pnpm dev`, `npm run dev`, `yarn dev` |
-| `build` | Compiler pour la production | `pnpm build`, `npm run build`, `yarn build` |
-| `preview` | Prévisualiser la version compilée | `pnpm preview`, `npm run preview`, `yarn preview` |
-| `format` | Formater le code | `pnpm format`, `npm run format`, `yarn format` |
-| `check` | Vérifier les erreurs TypeScript | `pnpm check`, `npm run check`, `yarn check` |
+Voici un tableau récapitulatif des commandes courantes pour le développement et la gestion du projet, adaptées à chaque gestionnaire de paquets :
+
+| Action | pnpm | npm | Yarn |
+| :-------------------------------- | :------------------ | :------------------ | :------------------ |
+| Lancer le serveur de développement | `pnpm dev` | `npm run dev` | `yarn dev` |
+| Compiler pour la production | `pnpm build` | `npm run build` | `yarn build` |
+| Prévisualiser la version compilée | `pnpm preview` | `npm run preview` | `yarn preview` |
+| Formater le code | `pnpm format` | `npm run format` | `yarn format` |
+| Vérifier les erreurs TypeScript | `pnpm check` | `npm run check` | `yarn check` |
 
 ## 🐛 Dépannage
 
-### Erreur : "command not found" (pnpm, npm ou yarn)
+### Erreur : "command not found" (pour pnpm, npm ou yarn)
+
+Si votre terminal ne reconnaît pas les commandes de votre gestionnaire de paquets après l'installation :
 
 **Solution :**
 
-Redémarrez votre terminal après l'installation du gestionnaire de paquets, ou assurez-vous qu'il est ajouté à votre PATH.
+Redémarrez votre terminal. Si le problème persiste, assurez-vous que le chemin d'accès à votre gestionnaire de paquets est correctement ajouté à la variable d'environnement `PATH` de votre système.
 
-**Windows :**
-```powershell
+-   **Windows (PowerShell) :**
+
+    ```powershell
 $env:Path += ";$env:APPDATA\npm"
-```
+    ```
 
-**macOS/Linux :**
-```bash
-export PATH="$HOME/.local/bin:$PATH"
-```
+-   **macOS/Linux :**
+
+    ```bash
+export PATH="$HOME/.local/bin:$PATH" # Ou le chemin d'installation spécifique
+    ```
 
 ### Erreur : "Port 3000 already in use"
 
-Le port 3000 est déjà utilisé. Utilisez un autre port :
+Cela signifie qu'une autre application utilise déjà le port 3000. Vous pouvez lancer Music Manager sur un autre port :
 
 ```bash
 pnpm dev -- --port 3001
+# ou
+npm run dev -- --port 3001
+# ou
+yarn dev --port 3001
 ```
 
-Puis ouvrez http://localhost:3001
+Puis ouvrez votre navigateur à l'adresse : `http://localhost:3001`.
 
-### Les fichiers ne s'affichent pas
+### Les fichiers audio ne s'affichent pas
 
-1. Vérifiez que le dossier contient des fichiers audio (.mp3, .wav, .flac, etc.)
-2. Vérifiez que vous avez autorisé l'accès au dossier
-3. Essayez un autre dossier
+-   Vérifiez que le dossier sélectionné contient bien des fichiers audio avec les extensions supportées (.mp3, .wav, .flac, etc.).
+-   Assurez-vous d'avoir autorisé l'accès au dossier lorsque le navigateur vous l'a demandé.
+-   Essayez de sélectionner un autre dossier pour voir si le problème persiste.
 
 ### Le lecteur audio ne fonctionne pas
 
-1. Vérifiez que vous utilisez Chrome, Edge ou Brave
-2. Vérifiez que le fichier audio n'est pas corrompu
-3. Essayez un autre format audio
+-   Vérifiez que vous utilisez un navigateur compatible (Chrome, Edge, Brave).
+-   Assurez-vous que le fichier audio n'est pas corrompu.
+-   Essayez de lire un autre format audio pour isoler le problème.
 
 ### Erreur : "git: command not found"
 
-Installez Git depuis [git-scm.com](https://git-scm.com/)
+Si Git n'est pas reconnu, installez-le depuis [git-scm.com](https://git-scm.com/).
 
 ## 📦 Installation en tant qu'application autonome
 
-Si vous voulez créer un exécutable Windows/macOS/Linux :
+Pour créer une version compilée de l'application (qui peut être déployée ou exécutée sans le serveur de développement) :
+
+#### Avec pnpm
 
 ```bash
 pnpm build
-# ou
+```
+
+#### Avec npm
+
+```bash
 npm run build
-# ou
+```
+
+#### Avec Yarn
+
+```bash
 yarn build
 ```
 
-Les fichiers compilés seront dans le dossier `dist/`
+Les fichiers compilés seront générés dans le dossier `dist/` à la racine du projet.
 
-## 🌐 Accès depuis un autre ordinateur
+## 🌐 Accès depuis un autre ordinateur sur le même réseau
 
-Pour accéder à l'application depuis un autre ordinateur sur le même réseau :
+Pour accéder à l'application Music Manager depuis un autre appareil connecté au même réseau local que votre machine de développement :
 
-1. Trouvez votre adresse IP locale :
+1.  **Trouvez l'adresse IP locale** de votre machine de développement :
 
-**Windows :**
-```cmd
-ipconfig
-```
+    -   **Windows :** Ouvrez l'invite de commande et tapez `ipconfig`. Cherchez la ligne "Adresse IPv4".
+    -   **macOS/Linux :** Ouvrez un terminal et tapez `ifconfig` ou `ip a`. Cherchez l'adresse IP associée à votre interface réseau (ex: `eth0`, `wlan0`).
 
-Cherchez "IPv4 Address"
+2.  Sur l'autre ordinateur, ouvrez un navigateur web et accédez à : `http://[VOTRE_ADRESSE_IP_LOCALE]:3000`
 
-**macOS/Linux :**
-```bash
-ifconfig
-```
+    *Exemple :* Si votre adresse IP locale est `192.168.1.100`, vous accéderez à `http://192.168.1.100:3000`.
 
-2. Sur l'autre ordinateur, ouvrez : **http://[VOTRE_IP]:3000**
+## 💾 Mise à jour de Music Manager
 
-Exemple : http://192.168.1.100:3000
+Pour mettre à jour votre copie locale de Music Manager avec les dernières modifications du dépôt :
 
-## 💾 Mise à jour
+1.  Naviguez dans le répertoire du projet :
 
-Pour mettre à jour Music Manager :
-
-```bash
+    ```bash
 cd MusicManager
+    ```
+
+2.  Récupérez les dernières modifications :
+
+    ```bash
 git pull origin main
+    ```
 
-# Réinstaller les dépendances avec votre gestionnaire de paquets préféré
+3.  Réinstallez les dépendances (si de nouvelles dépendances ont été ajoutées ou mises à jour) :
+
+    ```bash
 pnpm install # ou npm install ou yarn install
+    ```
 
-# Relancer l'application
+4.  Relancez l'application en mode développement :
+
+    ```bash
 pnpm dev # ou npm run dev ou yarn dev
-```
+    ```
 
 ## 🆘 Besoin d'aide ?
 
-1. Vérifiez les [issues GitHub](https://github.com/LHRICO78/MusicManager/issues)
-2. Ouvrez une nouvelle issue si votre problème n'est pas résolu
-3. Décrivez le problème en détail avec :
-   - Votre système d'exploitation
-   - Votre navigateur
-   - Les messages d'erreur
-   - Les étapes pour reproduire le problème
+Si vous rencontrez des problèmes qui ne sont pas couverts par la section de dépannage :
+
+1.  Consultez les [issues GitHub existantes](https://github.com/LHRICO78/MusicManager/issues) pour voir si votre problème a déjà été signalé ou résolu.
+2.  Si votre problème n'est pas listé, ouvrez une [nouvelle issue sur GitHub](https://github.com/LHRICO78/MusicManager/issues/new).
+3.  Lorsque vous ouvrez une issue, veuillez inclure le plus de détails possible :
+    -   Votre système d'exploitation (Windows, macOS, Linux et version).
+    -   Le navigateur que vous utilisez (Chrome, Edge, Brave et version).
+    -   Les messages d'erreur complets que vous avez rencontrés.
+    -   Les étapes précises pour reproduire le problème.
 
 ## ✨ Prochaines étapes
 
-Une fois installé, vous pouvez :
+Une fois Music Manager installé et fonctionnel, vous êtes prêt à :
 
-- Parcourir vos fichiers musicaux
-- Renommer les fichiers
-- Écouter vos musiques
-- Supprimer les fichiers indésirables
-- Organiser votre bibliothèque musicale
+-   Parcourir et gérer votre collection de fichiers musicaux.
+-   Renommer et supprimer des fichiers directement depuis l'interface.
+-   Profiter de votre musique avec le lecteur audio intégré.
+-   Organiser votre bibliothèque musicale de manière efficace.
 
-Profitez ! 🎵
+**Profitez de votre musique ! 🎵**

@@ -1,3 +1,4 @@
+```markdown
 # 🎵 Music Manager
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -27,11 +28,17 @@ Music Manager supporte une large gamme de formats audio grâce aux capacités na
 
 ### Prérequis
 
-- **Node.js** 18 ou supérieur
-- **pnpm** (recommandé) ou npm
-- **Navigateur compatible** : Chrome, Edge, ou Brave (L'API File System Access est requise)
+Pour faire fonctionner Music Manager, assurez-vous d'avoir installé :
 
-### Installation
+- **Node.js** 18 ou supérieur (disponible sur [nodejs.org](https://nodejs.org/))
+- Un gestionnaire de paquets : **pnpm** (recommandé), **npm** ou **yarn**.
+- Un **navigateur compatible** : Chrome, Edge, ou Brave (l'API File System Access est essentielle et n'est pas entièrement supportée par Firefox ou Safari).
+
+### Installation et Lancement
+
+Suivez les étapes ci-dessous en fonction de votre gestionnaire de paquets préféré.
+
+#### Avec pnpm (Recommandé)
 
 ```bash
 # 1. Cloner le projet
@@ -39,26 +46,47 @@ git clone https://github.com/LHRICO78/MusicManager.git
 cd MusicManager
 
 # 2. Installer les dépendances
-# Avec pnpm (recommandé)
 pnpm install
 
-# Ou avec npm
-# npm install
-
-# Ou avec yarn
-# yarn install
-
-# 3. Lancer en mode développement
+# 3. Lancer l'application en mode développement
 pnpm dev
 ```
 
-L'application sera disponible sur `http://localhost:3000`.
+#### Avec npm
+
+```bash
+# 1. Cloner le projet
+git clone https://github.com/LHRICO78/MusicManager.git
+cd MusicManager
+
+# 2. Installer les dépendances
+npm install
+
+# 3. Lancer l'application en mode développement
+npm run dev
+```
+
+#### Avec Yarn
+
+```bash
+# 1. Cloner le projet
+git clone https://github.com/LHRICO78/MusicManager.git
+cd MusicManager
+
+# 2. Installer les dépendances
+yarn install
+
+# 3. Lancer l'application en mode développement
+yarn dev
+```
+
+L'application sera accessible dans votre navigateur à l'adresse `http://localhost:3000`.
 
 ## 📖 Documentation Complète
 
 Pour plus de détails, consultez nos guides dédiés :
 
-- [**Guide d'Installation**](./INSTALLATION.md) : Instructions détaillées pour tous les OS.
+- [**Guide d'Installation**](./INSTALLATION.md) : Instructions détaillées pour tous les OS et gestionnaires de paquets.
 - [**Guide de Démarrage Rapide**](./QUICKSTART.md) : Pour une prise en main en 2 minutes.
 - [**Architecture du Projet**](./ARCHITECTURE.md) : Détails techniques et structure du code.
 - [**Contribuer**](./CONTRIBUTING.md) : Comment aider à améliorer le projet.
@@ -100,3 +128,4 @@ Projet : [https://github.com/LHRICO78/MusicManager](https://github.com/LHRICO78/
 
 ---
 *Fait avec ❤️ pour simplifier la gestion musicale.*
+```
