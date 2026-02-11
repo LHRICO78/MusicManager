@@ -21,6 +21,10 @@ interface MusicFile {
  * - Layout: Sidebar gauche + Zone centrale avec tableau + Lecteur audio
  * - Interactions: Édition en place, clics directs, lecture audio
  */
+/**
+ * Composant principal de la page d'accueil.
+ * Gère l'état global de la bibliothèque musicale, la lecture audio et les interactions avec le système de fichiers.
+ */
 export default function Home() {
   const [allFiles, setAllFiles] = useState<MusicFile[]>([]);
   const [directoryHandle, setDirectoryHandle] = useState<FileSystemDirectoryHandle | null>(null);
@@ -35,7 +39,13 @@ export default function Home() {
   // Vérifier si le navigateur supporte l'API File System Access
   const supportsFileSystemAccess = "showDirectoryPicker" in window;
 
-  // Récursivement lister tous les fichiers audio d'un répertoire
+  /**
+   * Parcourt récursivement un répertoire pour extraire tous les fichiers audio.
+   * 
+   * @param dirHandle - Le handle du répertoire à scanner.
+   * @param basePath - Le chemin relatif actuel (utilisé pour la récursion).
+   * @returns Une promesse résolue avec une liste d'objets MusicFile.
+   */
   const getAllAudioFiles = async (
     dirHandle: FileSystemDirectoryHandle,
     basePath: string = ""
@@ -85,7 +95,10 @@ export default function Home() {
     return files;
   };
 
-  // Sélectionner un répertoire racine
+  /**
+   * Ouvre le sélecteur de répertoire natif et initialise la bibliothèque.
+   * Affiche une erreur si le navigateur n'est pas compatible.
+   */
   const handleSelectDirectory = async () => {
     if (!supportsFileSystemAccess) {
       toast.error("Votre navigateur ne supporte pas la sélection de répertoire. Utilisez Chrome, Edge ou Brave.");
@@ -114,7 +127,12 @@ export default function Home() {
     }
   };
 
-  // Jouer un fichier
+  /**
+   * Prépare et lance la lecture d'un fichier audio spécifique par son index.
+   * Crée une URL d'objet temporaire pour le streaming local.
+   * 
+   * @param index - L'index du fichier dans le tableau allFiles.
+   */
   const playFile = (index: number) => {
     const file = allFiles[index];
     if (!audioRef.current) return;
@@ -186,7 +204,12 @@ export default function Home() {
     setAllFiles(newFiles);
   };
 
-  // Sauvegarder le renommage
+  /**
+   * Applique le changement de nom d'un fichier sur le disque.
+   * Utilise la méthode move() de l'API File System Access.
+   * 
+   * @param index - L'index du fichier à renommer.
+   */
   const saveRename = async (index: number) => {
     const file = allFiles[index];
     const newName = file.editingName.trim();

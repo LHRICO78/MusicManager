@@ -1,152 +1,95 @@
 # 🎵 Music Manager
 
-Un gestionnaire de fichiers musicaux moderne avec lecteur audio intégré. Sélectionnez un répertoire local, visualisez tous vos fichiers audio, renommez-les, supprimez-les et écoutez-les directement dans l'application.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![React](https://img.shields.io/badge/React-19-blue.svg)](https://reactjs.org/)
+[![Vite](https://img.shields.io/badge/Vite-7-646CFF.svg)](https://vitejs.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-38B2AC.svg)](https://tailwindcss.com/)
 
-## ✨ Fonctionnalités
+Un gestionnaire de fichiers musicaux moderne, minimaliste et performant avec lecteur audio intégré. Conçu pour les audiophiles qui souhaitent organiser leur bibliothèque locale avec une interface de type terminal professionnel.
 
-- 📁 **Sélection de répertoire** : Parcourez vos dossiers locaux via l'API File System Access
-- 🎵 **Vue plate de tous les fichiers** : Visualisez tous les fichiers audio de tous les sous-dossiers en une seule liste
-- 🎧 **Lecteur audio intégré** : Écoutez vos fichiers directement dans l'application
-- ▶️ **Contrôles complets** : Play/Pause, piste précédente/suivante, barre de progression, contrôle du volume
-- ✏️ **Édition en place** : Renommez les fichiers directement depuis l'interface
-- 🗑️ **Suppression** : Supprimez les fichiers que vous ne voulez plus
-- 📊 **Statistiques** : Affichage du nombre de fichiers et de la taille totale
-- 🎨 **Interface minimaliste** : Design de terminal professionnel avec accent vert électrique
+## ✨ Points Forts
 
-## 🎼 Formats audio supportés
+*   📁 **Accès Direct au Système de Fichiers** : Utilise l'API *File System Access* pour manipuler vos fichiers locaux sans téléchargement.
+*   🎵 **Vue Plate (Flat View)** : Visualisez tous les fichiers audio de vos sous-dossiers en une seule liste consolidée.
+*   🎧 **Lecteur Audio Intégré** : Écoutez vos morceaux instantanément avec des contrôles complets (Volume, Navigation, Barre de progression).
+*   ✏️ **Édition Rapide** : Renommez vos fichiers directement dans l'interface avec retour visuel immédiat.
+*   📊 **Statistiques en Temps Réel** : Suivez le nombre de fichiers et la taille totale de votre collection sélectionnée.
+*   🎨 **Design "Electric Terminal"** : Une esthétique sobre en noir et vert électrique pour un focus maximal sur vos données.
 
-- MP3, WAV, FLAC, AAC, OGG, M4A, WMA
-- ALAC, APE, OPUS, WV, DSF, DFF, DSD
-- M4B, AIFF, AU, MID, MIDI
+## 🎼 Formats Supportés
 
-## 🚀 Installation Rapide
+Music Manager supporte une large gamme de formats audio grâce aux capacités natives de votre navigateur :
+- **Standard** : MP3, WAV, FLAC, AAC, OGG, M4A, WMA
+- **Haute Qualité/Spécifiques** : ALAC, APE, OPUS, WV, DSF, DFF, DSD
+- **Autres** : M4B, AIFF, AU, MID, MIDI
+
+## 🚀 Démarrage Rapide
 
 ### Prérequis
 
-- **Node.js** 18+ ([Télécharger](https://nodejs.org/))
-- **pnpm** ([Installer](https://pnpm.io/installation))
-- **Navigateur compatible** : Chrome, Edge, Brave (Firefox non supporté)
+- **Node.js** 18 ou supérieur
+- **pnpm** (recommandé) ou npm
+- **Navigateur compatible** : Chrome, Edge, ou Brave (L'API File System Access est requise)
 
-### Étapes d'installation
-
-#### 1. Cloner le dépôt
+### Installation
 
 ```bash
+# 1. Cloner le projet
 git clone https://github.com/LHRICO78/MusicManager.git
 cd MusicManager
-```
 
-#### 2. Installer les dépendances
-
-```bash
+# 2. Installer les dépendances
 pnpm install
-```
 
-#### 3. Lancer le serveur de développement
-
-```bash
+# 3. Lancer en mode développement
 pnpm dev
 ```
 
-L'application s'ouvrira automatiquement sur `http://localhost:3000`
+L'application sera disponible sur `http://localhost:3000`.
 
-#### 4. Utiliser l'application
+## 📖 Documentation Complète
 
-1. Cliquez sur **"Sélectionner Répertoire"**
-2. Choisissez un dossier contenant vos fichiers musicaux
-3. Tous les fichiers audio s'affichent dans la liste
-4. Cliquez sur le bouton ▶️ pour lire un fichier
-5. Utilisez les contrôles pour naviguer et ajuster le volume
+Pour plus de détails, consultez nos guides dédiés :
 
-## 📦 Build pour la production
+- [**Guide d'Installation**](./INSTALLATION.md) : Instructions détaillées pour tous les OS.
+- [**Guide de Démarrage Rapide**](./QUICKSTART.md) : Pour une prise en main en 2 minutes.
+- [**Architecture du Projet**](./ARCHITECTURE.md) : Détails techniques et structure du code.
+- [**Contribuer**](./CONTRIBUTING.md) : Comment aider à améliorer le projet.
 
-```bash
-pnpm build
-```
+## 🏗️ Stack Technique
 
-Les fichiers compilés seront dans le dossier `dist/`
-
-## 🎮 Raccourcis clavier
-
-| Raccourci | Action |
-|-----------|--------|
-| Clic sur fichier | Lire le fichier |
-| Double-clic sur nom | Renommer le fichier |
-| Entrée | Confirmer le renommage |
-| Échap | Annuler le renommage |
-
-## 🏗️ Architecture
-
-```
-music-manager/
-├── client/                 # Frontend React
-│   ├── src/
-│   │   ├── pages/         # Pages principales
-│   │   ├── components/    # Composants réutilisables
-│   │   ├── contexts/      # Contextes React
-│   │   ├── lib/           # Utilitaires
-│   │   ├── App.tsx        # Routeur principal
-│   │   ├── main.tsx       # Point d'entrée
-│   │   └── index.css      # Styles globaux
-│   ├── public/            # Fichiers statiques
-│   └── index.html         # Template HTML
-├── server/                # Backend Express (placeholder)
-├── package.json           # Dépendances du projet
-├── vite.config.ts         # Configuration Vite
-└── tailwind.config.ts     # Configuration Tailwind CSS
-```
-
-## 🛠️ Technologies utilisées
-
-- **Frontend** : React 19, TypeScript, Tailwind CSS 4
-- **Build** : Vite 7
+- **Framework** : React 19 (TypeScript)
+- **Build Tool** : Vite 7
+- **Styling** : Tailwind CSS 4
 - **UI Components** : shadcn/ui
 - **Icons** : Lucide React
 - **Notifications** : Sonner
 - **Routing** : Wouter
-- **API** : File System Access API (Chrome/Edge/Brave)
 
-## ⚠️ Limitations
+## ⚠️ Limitations Actuelles
 
-- **Navigateur** : Nécessite Chrome, Edge ou Brave (Firefox n'est pas supporté)
-- **API File System** : Accès local uniquement, pas de cloud
-- **Permissions** : L'utilisateur doit autoriser l'accès au dossier sélectionné
-
-## 🐛 Dépannage
-
-### L'application dit "Navigateur non supporté"
-
-Utilisez Chrome, Edge ou Brave à la place de Firefox.
-
-### Les fichiers ne s'affichent pas
-
-Vérifiez que :
-- Le dossier contient des fichiers audio avec les bonnes extensions
-- Vous avez autorisé l'accès au dossier quand demandé
-- Les fichiers ne sont pas corrompus
-
-### Le lecteur audio ne fonctionne pas
-
-- Vérifiez que votre navigateur a la permission d'accéder aux fichiers
-- Essayez un autre format audio
-- Vérifiez que le fichier n'est pas corrompu
-
-## 📝 Licence
-
-MIT
-
-## 👨‍💻 Auteur
-
-Créé avec ❤️ pour les amateurs de musique
+- **Compatibilité** : Ne fonctionne pas sur Firefox ou Safari car ils ne supportent pas encore l'API *File System Access* de manière complète.
+- **Accès Local** : L'application ne stocke rien sur un serveur ; tout se passe localement dans votre navigateur.
 
 ## 🤝 Contribution
 
-Les contributions sont bienvenues ! N'hésitez pas à ouvrir une issue ou une pull request.
+Les contributions sont ce qui rend la communauté open source incroyable. Toute contribution que vous faites est **grandement appréciée**.
 
-## 📞 Support
+1. Forkez le projet
+2. Créez votre branche de fonctionnalité (`git checkout -b feature/AmazingFeature`)
+3. Committez vos changements (`git commit -m 'Add some AmazingFeature'`)
+4. Poussez vers la branche (`git push origin feature/AmazingFeature`)
+5. Ouvrez une Pull Request
 
-Pour toute question ou problème, ouvrez une [issue sur GitHub](https://github.com/LHRICO78/MusicManager/issues)
+## 📝 Licence
+
+Distribué sous la licence MIT. Voir `LICENSE` pour plus d'informations.
+
+## 👨‍💻 Contact
+
+LHRICO78 - [GitHub Profile](https://github.com/LHRICO78)
+
+Projet : [https://github.com/LHRICO78/MusicManager](https://github.com/LHRICO78/MusicManager)
 
 ---
-
-**Profitez de votre musique ! 🎵**
+*Fait avec ❤️ pour simplifier la gestion musicale.*
