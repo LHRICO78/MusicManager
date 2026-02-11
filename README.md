@@ -39,7 +39,14 @@ git clone https://github.com/LHRICO78/MusicManager.git
 cd MusicManager
 
 # 2. Installer les dépendances
+# Avec pnpm (recommandé)
 pnpm install
+
+# Ou avec npm
+# npm install
+
+# Ou avec yarn
+# yarn install
 
 # 3. Lancer en mode développement
 pnpm dev
